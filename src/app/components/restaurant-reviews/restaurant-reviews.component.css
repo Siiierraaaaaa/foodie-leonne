@@ -1,0 +1,161 @@
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: calc(var(--spacing-unit) * 4) var(--spacing-unit);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: calc(var(--spacing-unit) * 4);
+}
+
+.subtitle {
+  color: var(--color-terracotta);
+  font-size: 1.2rem;
+  margin-top: var(--spacing-unit);
+}
+
+/* Card Styles */
+.review-card {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card-image {
+  height: 200px;
+  overflow: hidden;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  margin: calc(var(--spacing-unit) * -2) calc(var(--spacing-unit) * -2) var(--spacing-unit);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: var(--spacing-unit);
+}
+
+.rating {
+  color: var(--color-bright-coral);
+  margin: calc(var(--spacing-unit) / 2) 0;
+}
+
+.cuisine {
+  color: var(--color-terracotta);
+  font-weight: 700;
+  margin-bottom: var(--spacing-unit);
+}
+
+.excerpt {
+  color: var(--color-deep-maroon);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: var(--spacing-unit);
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: var(--border-radius);
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: var(--spacing-unit);
+  right: var(--spacing-unit);
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-image {
+  height: 300px;
+  overflow: hidden;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-body {
+  padding: calc(var(--spacing-unit) * 3);
+}
+
+.details {
+  background-color: var(--color-light-pink);
+  padding: calc(var(--spacing-unit) * 2);
+  border-radius: var(--border-radius);
+  margin: calc(var(--spacing-unit) * 2) 0;
+}
+
+.details p {
+  margin-bottom: var(--spacing-unit);
+}
+
+.details p:last-child {
+  margin-bottom: 0;
+}
+
+.review-text {
+  line-height: 1.8;
+}
+
+.review-text p {
+  margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.rating-text {
+  margin-left: var(--spacing-unit);
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .modal-image {
+    height: 200px;
+  }
+
+  .modal-body {
+    padding: calc(var(--spacing-unit) * 2);
+  }
+}

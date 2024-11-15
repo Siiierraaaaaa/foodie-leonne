@@ -1,0 +1,87 @@
+.login-container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-unit);
+  background-color: var(--color-light-pink);
+}
+
+.login-card {
+  background-color: white;
+  padding: calc(var(--spacing-unit) * 3);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card h2 {
+  color: var(--color-deep-maroon);
+  text-align: center;
+  margin-bottom: calc(var(--spacing-unit) * 2);
+  font-family: var(--font-primary);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 2);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 0.5);
+}
+
+label {
+  color: var(--color-deep-maroon);
+  font-weight: 500;
+}
+
+input {
+  padding: calc(var(--spacing-unit) * 1.5);
+  border: 2px solid var(--color-light-pink);
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-bright-coral);
+}
+
+input.error {
+  border-color: var(--color-bright-coral);
+}
+
+.error-message {
+  color: var(--color-bright-coral);
+  font-size: 0.875rem;
+  margin-top: calc(var(--spacing-unit) * 0.5);
+}
+
+button {
+  background-color: var(--color-bright-coral);
+  color: white;
+  border: none;
+  padding: calc(var(--spacing-unit) * 1.5);
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--color-coral-pink);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

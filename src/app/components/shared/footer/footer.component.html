@@ -1,0 +1,60 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>About Foodie Leonne</h3>
+      <p>A personal food blog sharing delicious recipes, restaurant reviews, and culinary adventures.</p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/recipes">Recipes</a></li>
+        <li><a routerLink="/reviews">Reviews</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Categories</h3>
+      <ul>
+        <li><a routerLink="/category/restaurant-reviews">Restaurant Reviews</a></li>
+        <li><a routerLink="/category/holiday-dishes">Holiday Dishes</a></li>
+        <li><a routerLink="/category/leonnes-favorites">Leonne's Favorites</a></li>
+        <li><a routerLink="/category/quick-bites">Quick Bites</a></li>
+        <li><a routerLink="/category/desserts">Desserts</a></li>
+        <li><a routerLink="/category/must-try">Must Try's</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Connect</h3>
+      <div class="social-links">
+        <a [href]="socialLinks.instagram" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a [href]="socialLinks.tiktok" target="_blank" rel="noopener" aria-label="Follow on TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a [href]="socialLinks.facebook" target="_blank" rel="noopener" aria-label="Follow on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="copyright">
+      &copy; {{ currentYear }} Foodie Leonne. All rights reserved.
+    </div>
+    <div class="admin-link">
+      <ng-container *ngIf="!authService.isLoggedIn">
+        <a routerLink="/admin/login" class="admin-btn">Admin Login</a>
+      </ng-container>
+      <ng-container *ngIf="authService.isLoggedIn">
+        <a routerLink="/admin/dashboard" class="admin-btn">Admin Dashboard</a>
+      </ng-container>
+    </div>
+  </div>
+</footer>

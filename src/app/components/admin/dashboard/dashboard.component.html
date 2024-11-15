@@ -1,0 +1,85 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <h1>Admin Dashboard</h1>
+    <button (click)="logout()" class="logout-btn">Logout</button>
+  </header>
+
+  <div class="error-message" *ngIf="error">{{ error }}</div>
+
+  <div class="dashboard-content">
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()" class="post-form">
+      <h2>{{ editingPost ? 'Edit Post' : 'Create New Post' }}</h2>
+
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input id="title" type="text" formControlName="title" placeholder="Enter post title">
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select id="category" formControlName="category">
+          <option value="">Select a category</option>
+          <option *ngFor="let cat of categories" [value]="cat.value">
+            {{ cat.label }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="excerpt">Excerpt</label>
+        <textarea id="excerpt" formControlName="excerpt" rows="3" placeholder="Enter a brief excerpt"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea id="content" formControlName="content" rows="10" placeholder="Write your post content here"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Featured Image</label>
+        <input type="file" (change)="onImageSelected($event)" accept="image/*">
+        <div class="image-preview" *ngIf="imagePreview">
+          <img [src]="imagePreview" alt="Preview">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select id="status" formControlName="status">
+          <option value="draft">Draft</option>
+          <option value="published">Published</option>
+          <option value="scheduled">Scheduled</option>
+        </select>
+      </div>
+
+      <div class="form-group" *ngIf="postForm.get('status')?.value === 'scheduled'">
+        <label for="publishedAt">Publish Date</label>
+        <input id="publishedAt" type="datetime-local" formControlName="publishedAt">
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="postForm.invalid || loading">
+          {{ editingPost ? 'Update' : 'Create' }} Post
+        </button>
+        <button type="button" (click)="resetForm()" *ngIf="editingPost">Cancel</button>
+      </div>
+    </form>
+
+    <div class="posts-list">
+      <h2>Posts</h2>
+      <div class="loading" *ngIf="loading">Loading...</div>
+      
+      <div class="post-item" *ngFor="let post of posts">
+        <h3>{{ post.title }}</h3>
+        <div class="post-meta">
+          <span class="status {{ post.status }}">{{ post.status }}</span>
+          <span class="category">{{ post.category }}</span>
+        </div>
+        <div class="post-actions">
+          <button (click)="editPost(post)">Edit</button>
+          <button (click)="deletePost(post.id!)" class="delete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

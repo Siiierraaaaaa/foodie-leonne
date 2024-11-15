@@ -1,0 +1,68 @@
+<div class="gallery-view">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Leonne's Favorites</h1>
+      <p>A curated collection of my most beloved recipes and dishes</p>
+    </div>
+  </section>
+
+  <!-- Error Message -->
+  <div class="error-message" *ngIf="error">{{ error }}</div>
+
+  <!-- Loading State -->
+  <div class="loading-state" *ngIf="loading">
+    <div class="spinner"></div>
+    <p>Loading favorites...</p>
+  </div>
+
+  <!-- Gallery Grid -->
+  <section class="gallery-grid" *ngIf="!loading && !error">
+    <article class="gallery-item" *ngFor="let post of posts" (click)="openPostDetails(post)">
+      <div class="item-image" *ngIf="post.imageUrl">
+        <img [src]="post.imageUrl" [alt]="post.title">
+        <div class="item-overlay">
+          <div class="item-meta">
+            <span class="date">{{ formatDate(post.createdAt) }}</span>
+          </div>
+          <h2>{{ post.title }}</h2>
+          <p class="excerpt">{{ post.excerpt }}</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Empty State -->
+  <div class="empty-state" *ngIf="!loading && !error && posts.length === 0">
+    <h2>No Favorites Yet</h2>
+    <p>Check back soon for my personal favorite dishes!</p>
+  </div>
+
+  <!-- Post Details Modal -->
+  <div class="modal" *ngIf="selectedPost" (click)="closePostDetails()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="close-button" (click)="closePostDetails()">&times;</button>
+      
+      <div class="post-header">
+        <h2>{{ selectedPost.title }}</h2>
+        <div class="meta">
+          <span class="date">{{ formatDate(selectedPost.createdAt) }}</span>
+        </div>
+      </div>
+
+      <div class="featured-image" *ngIf="selectedPost.imageUrl">
+        <img [src]="selectedPost.imageUrl" [alt]="selectedPost.title">
+      </div>
+
+      <div class="post-content" [innerHTML]="selectedPost.content"></div>
+      
+      <div class="post-footer">
+        <div class="tags" *ngIf="selectedPost.seoMetadata?.keywords?.length">
+          <span class="tag" *ngFor="let keyword of selectedPost.seoMetadata.keywords">
+            {{ keyword }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

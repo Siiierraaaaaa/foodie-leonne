@@ -1,0 +1,33 @@
+[debug] [2024-11-15T15:29:01.482Z] ----------------------------------------------------------------------
+[debug] [2024-11-15T15:29:01.484Z] Command:       /opt/homebrew/Cellar/node/21.5.0/bin/node /Users/sierraparker/.npm-global/bin/firebase deploy --only storage
+[debug] [2024-11-15T15:29:01.484Z] CLI Version:   12.9.1
+[debug] [2024-11-15T15:29:01.484Z] Platform:      darwin
+[debug] [2024-11-15T15:29:01.484Z] Node Version:  v21.5.0
+[debug] [2024-11-15T15:29:01.484Z] Time:          Fri Nov 15 2024 10:29:01 GMT-0500 (Eastern Standard Time)
+[debug] [2024-11-15T15:29:01.484Z] ----------------------------------------------------------------------
+[debug] 
+[error] 
+[error] Error: No currently active project.
+To run this command, you need to specify a project. You have two options:
+- Run this command with --project <alias_or_project_id>.
+- Set an active project by running firebase use --add, then rerun this command.
+To list all the Firebase projects to which you have access, run firebase projects:list.
+To learn about active projects for the CLI, visit https://firebase.google.com/docs/cli#project_aliases
+
+
+[debug] [2024-11-15T15:29:18.030Z] ----------------------------------------------------------------------
+[debug] [2024-11-15T15:29:18.031Z] Command:       /opt/homebrew/Cellar/node/21.5.0/bin/node /Users/sierraparker/.npm-global/bin/firebase use the-foodie-leonne
+[debug] [2024-11-15T15:29:18.031Z] CLI Version:   12.9.1
+[debug] [2024-11-15T15:29:18.032Z] Platform:      darwin
+[debug] [2024-11-15T15:29:18.032Z] Node Version:  v21.5.0
+[debug] [2024-11-15T15:29:18.032Z] Time:          Fri Nov 15 2024 10:29:18 GMT-0500 (Eastern Standard Time)
+[debug] [2024-11-15T15:29:18.032Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-15T15:29:18.068Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-15T15:29:18.068Z] > authorizing via signed-in user (thefoodieleonne@gmail.com)
+[debug] [2024-11-15T15:29:18.069Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-foodie-leonne [none]
+[debug] [2024-11-15T15:29:18.495Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/the-foodie-leonne 403
+[debug] [2024-11-15T15:29:18.495Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/the-foodie-leonne {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2024-11-15T15:29:18.496Z] HTTP Error: 403, The caller does not have permission
+[error] 
+[error] Error: Invalid project selection, please verify project the-foodie-leonne exists and you have access.

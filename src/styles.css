@@ -1,0 +1,105 @@
+/* Global Variables */
+:root {
+  --color-light-pink: #FEEBED;
+  --color-deep-maroon: #543B37;
+  --color-terracotta: #DB9C85;
+  --color-coral-pink: #E56D84;
+  --color-bright-coral: #E73B68;
+  --font-primary: 'Merienda', cursive;
+  --spacing-unit: 8px;
+  --border-radius: 12px;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-light-pink);
+  color: var(--color-deep-maroon);
+  line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  color: var(--color-deep-maroon);
+  margin-bottom: var(--spacing-unit);
+}
+
+/* Common Components */
+.card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: calc(var(--spacing-unit) * 2);
+  margin: var(--spacing-unit);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Buttons */
+.btn {
+  font-family: var(--font-primary);
+  padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 3);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background-color: var(--color-bright-coral);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-coral-pink);
+}
+
+.btn-secondary {
+  background-color: var(--color-terracotta);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-deep-maroon);
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: calc(var(--spacing-unit) * 2);
+  padding: calc(var(--spacing-unit) * 2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card {
+    margin: var(--spacing-unit) 0;
+  }
+}

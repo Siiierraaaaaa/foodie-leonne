@@ -1,0 +1,80 @@
+<div class="home-container fade-in">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to The Foodie Leonne</h1>
+      <p class="subtitle">Exploring culinary delights, one bite at a time</p>
+    </div>
+  </section>
+
+  <!-- Featured Categories -->
+  <section class="categories">
+    <h2>Explore Food Categories</h2>
+    <div class="category-grid">
+      <a routerLink="/restaurant-reviews" class="category-card">
+        <div class="category-image">
+          <img src="assets/placeholder-restaurant.jpg" alt="Restaurant Reviews">
+        </div>
+        <h3>Restaurant Reviews</h3>
+        <p>Discover the finest dining experiences</p>
+      </a>
+
+      <a routerLink="/holiday-dishes" class="category-card">
+        <div class="category-image">
+          <img src="assets/placeholder-holiday.jpg" alt="Holiday Dishes">
+        </div>
+        <h3>Holiday Dishes</h3>
+        <p>Festive recipes and celebrations</p>
+      </a>
+
+      <a routerLink="/leonne-favorites" class="category-card">
+        <div class="category-image">
+          <img src="assets/placeholder-favorites.jpg" alt="Leonne's Favorites">
+        </div>
+        <h3>Leonne's Favorites</h3>
+        <p>My personal food recommendations</p>
+      </a>
+
+      <a routerLink="/quick-bites" class="category-card">
+        <div class="category-image">
+          <img src="assets/placeholder-quick.jpg" alt="Quick Bites">
+        </div>
+        <h3>Quick Bites</h3>
+        <p>Fast and delicious meals</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Latest Posts -->
+  <section class="latest-posts">
+    <h2>Latest Food Adventures</h2>
+    <div class="posts-grid">
+      <article class="post-card" *ngFor="let i of [1,2,3]">
+        <div class="post-image">
+          <img src="assets/placeholder-post.jpg" alt="Food post">
+        </div>
+        <div class="post-content">
+          <span class="post-category">Restaurant Reviews</span>
+          <h3>Delightful Evening at Sample Restaurant</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+          <div class="post-meta">
+            <span class="date">March 15, 2024</span>
+            <span class="read-more">Read More →</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <div class="newsletter-content">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to get the latest food adventures and recipes!</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</div>

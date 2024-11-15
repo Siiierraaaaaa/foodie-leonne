@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="header-content">
+    <a routerLink="/home" class="logo">
+      <h1>The Foodie Leonne</h1>
+    </a>
+    
+    <nav class="main-nav">
+      <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-links" [class.active]="isMenuOpen">
+        <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a routerLink="/restaurant-reviews" routerLinkActive="active">Restaurant Reviews</a></li>
+        <li><a routerLink="/holiday-dishes" routerLinkActive="active">Holiday Dishes</a></li>
+        <li><a routerLink="/leonne-favorites" routerLinkActive="active">Leonne's Favorites</a></li>
+        <li><a routerLink="/quick-bites" routerLinkActive="active">Quick Bites</a></li>
+        <li><a routerLink="/desserts" routerLinkActive="active">Desserts</a></li>
+        <li><a routerLink="/must-trys" routerLinkActive="active">Must Try's</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
